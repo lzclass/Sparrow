@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+def config = rootProject.ext
+
+android {
+    compileSdkVersion config.android.compileSdkVersion
+    buildToolsVersion config.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.android.minSdkVersion
+        targetSdkVersion config.android.targetSdkVersion
+        versionCode config.android.versionCode
+        versionName config.android.versionName
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //Android Support
+    implementation config.dependencies["support-v7"]
+    implementation config.dependencies["design"]
+    testImplementation config.dependencies["junit"]
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //在基础组件中，需要导入路由的运行期、编译期依赖库。
+    implementation config.dependencies["arouter-api"]
+    annotationProcessor config.dependencies["arouter-compiler"]
+    implementation config.dependencies["event-bus"]
+    implementation config.dependencies["fastjson"]
+    //网络请求相关
+}
