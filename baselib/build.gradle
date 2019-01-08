@@ -1,37 +1,77 @@
 apply plugin: 'com.android.library'
-def config = rootProject.ext
 
 android {
-    compileSdkVersion config.android.compileSdkVersion
-    buildToolsVersion config.android.buildToolsVersion
-
+    compileSdkVersion build_versions.target_sdk
     defaultConfig {
-        minSdkVersion config.android.minSdkVersion
-        targetSdkVersion config.android.targetSdkVersion
-        versionCode config.android.versionCode
-        versionName config.android.versionName
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+    }
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
-            }
+    repositories {
+        jcenter()
+        maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        google()
+        mavenCentral()
+        maven{url 'https://maven.google.com'}
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //Android Support
-    implementation config.dependencies["support-v7"]
-    implementation config.dependencies["design"]
-    testImplementation config.dependencies["junit"]
-//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-
-    //在基础组件中，需要导入路由的运行期、编译期依赖库。
-    implementation config.dependencies["arouter-api"]
-    annotationProcessor config.dependencies["arouter-compiler"]
-    implementation config.dependencies["event-bus"]
-    implementation config.dependencies["fastjson"]
-    //网络请求相关
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    // Support libraries
+    api deps.support.app_compat
+    api deps.support.v4
+    api deps.support.v13
+    api deps.support.design
+    api deps.support.cardview
+    api deps.support.percent
+    api deps.support.recyclerview
+    api deps.constraint_layout
+    // RxJava and retrofit
+    api deps.rx_android
+    api deps.rxjava2
+    api deps.retrofit.runtime
+    api deps.retrofit.gson
+    api deps.persistent_cookie
+    //Dagger
+    api deps.dagger.runtime
+    api deps.dagger.android
+    api deps.dagger.android_support
+    // other
+    api deps.kotlin.stdlib
+    api deps.event_bus
+    api deps.gson
+    api deps.permission
+    api deps.utils
+    api deps.glide
+    //view
+    api deps.photo_view
+    api deps.easy_recycler
+    api deps.material_dialog
+    api deps.logger
+    api deps.toasty
+    //router
+    api deps.arouter_api
+    //annotationProcessor
+    annotationProcessor deps.dagger.android_support_compiler
+    annotationProcessor deps.dagger.compiler
+    implementation files('libs/simple-xml-core.jar')
 }

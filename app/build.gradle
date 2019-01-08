@@ -1,47 +1,64 @@
 apply plugin: 'com.android.application'
-def config = rootProject.ext
+// 密钥
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+// 加载keystore.properties到项目中
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
-def releaseTime() {// 定义一个打包时间
+static def buildTime() {// 定义一个打包时间
     return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
 }
 
 android {
-    compileSdkVersion config.android["compileSdkVersion"]
-    buildToolsVersion config.android.buildToolsVersion
-    defaultConfig {
-        applicationId "com.moving.keep.sparrow"
-        minSdkVersion config.android.minSdkVersion
-        targetSdkVersion config.android.targetSdkVersion
-        versionCode config.android.versionCode
-        versionName config.android.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        signingConfigs {
-            release {//签名配置
-                keyAlias "sparrow"
-                keyPassword "123456"
-                storeFile file('../sparrow.jks')
-                storePassword "123456"
-                v1SigningEnabled true
-                v2SigningEnabled true
-            }
-        }
-
-        ndk {// 设置支持的SO库架构(cpu)
-            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+    signingConfigs {
+        release {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
         }
     }
+    compileSdkVersion build_versions.target_sdk
+    defaultConfig {
+        applicationId "com.moving.keep.sparrow"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        //打包时间
+        resValue "string", "build_time", buildTime()
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
-            minifyEnabled false//是否进行混淆
-            shrinkResources false//是否清理无用资源,依赖于minifyEnabled
-            zipAlignEnabled false//是否启用zipAlign压缩
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'//混淆文件的位置
+            //更改AndroidManifest.xml中预先定义好占位符信息
+            //manifestPlaceholders = [app_icon: "@drawable/icon"]
+            // 不显示Log
+            buildConfigField "boolean", "LEO_DEBUG", "false"
+            minifyEnabled true//是否进行混淆
+            shrinkResources true//是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled true//是否启用zipAlign压缩
+            //混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release//配置签名文件
         }
         debug {
+            applicationIdSuffix ".debug" //给applicationId添加后缀“.debug”
+            //manifestPlaceholders = [app_icon: "@drawable/launch_beta"]
+            buildConfigField "boolean", "LOG_DEBUG", "true"
             minifyEnabled false//是否进行混淆
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'// 混淆文件的位置
+            shrinkResources false//是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled false//是否启用zipAlign压缩
+            // 混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release//配置签名文件
+            debuggable true
         }
     }
 
@@ -49,17 +66,11 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation config.dependencies["support-v7"]
-    implementation config.dependencies["design"]
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation config.dependencies["support-vector-drawable"]
-    testImplementation config.dependencies["junit"]
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation deps.support.multidex
+    implementation project(':baselib')
+    
     if (!isModuleRun.toBoolean()) {
         implementation project(':module_main')
         implementation project(':module_one')
-    }else {
-        implementation project(':baselib')
     }
 }

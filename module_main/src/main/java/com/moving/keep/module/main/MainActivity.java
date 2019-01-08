@@ -8,8 +8,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.moving.keep.baselib.RouterPath;
-import com.moving.keep.module.main.R;
+import com.moving.keep.baselib.utils.RouterPath;
 
 @Route(path = RouterPath.MAIN_ACTIVITY)//地址最少两级
 public class MainActivity extends AppCompatActivity {

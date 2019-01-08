@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.moving.keep.baselib.RouterPath;
+import com.moving.keep.baselib.utils.RouterPath;
 
 @Route(path=RouterPath.MODULE_ONE)
 public class ModuleOneActivity extends AppCompatActivity {
