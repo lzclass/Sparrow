@@ -1,13 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moving.keep.module.main">
+    package="com.guiying.module.main">
 
-    <application android:name="debug.MainApplication">
-        <activity
-            android:name="com.moving.keep.module.main.MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme">
+    <application
+        android:name="debug.MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_main"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.guiying.module.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

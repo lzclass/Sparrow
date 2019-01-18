@@ -1,1 +1,6 @@
-include ':app', ':baselib', ':module_main', ':module_one'
+include ':lib_common',
+        ':module_app',
+        ':module_main',
+        ':module_girls',
+        ':module_news'
+        
