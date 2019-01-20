@@ -6,7 +6,6 @@
         android:name="debug.ServiceApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/news_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="debug.LauncherActivity">
@@ -17,13 +16,5 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".main.NewsCenterActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".detail.NewsDetailActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 </manifest>
