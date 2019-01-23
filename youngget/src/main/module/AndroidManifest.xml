@@ -13,12 +13,11 @@
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".SideSlipCloseActivity"
             android:label="@string/app_name"
-            android:theme="@style/transparency_theme_light"></activity>
+            android:theme="@style/transparency_theme_light" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main">
@@ -28,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ToastActivity"></activity>
     </application>
 
 </manifest>

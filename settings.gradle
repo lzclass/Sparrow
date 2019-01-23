@@ -1,4 +1,5 @@
-include ':lib_common', ':youngget',
+include ':lib_common',
+        ':youngget',
         ':module_app',
         ':module_main',
         ':module_girls',

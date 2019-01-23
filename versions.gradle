@@ -5,8 +5,8 @@
 ext.deps = [:]
 
 def versions = [:]
-versions.android_gradle_plugin = "3.0.1"
-versions.kotlin = "1.1.51"
+versions.android_gradle_plugin = "3.2.0"
+versions.kotlin = "1.2.51"
 versions.support = "27.0.2"
 versions.multidex = "1.0.2"
 versions.constraint_layout = "1.0.2"
@@ -30,10 +30,12 @@ versions.litepal = "1.6.1"
 versions.toasty = "1.1.3"
 versions.logger = "1.15"
 versions.material_dialog = "0.9.6.0"
+versions.databinding = "3.1.4"
+
+
 //Arouter
 versions.arouter_compiler = "1.1.4"
 versions.arouter_api = "1.3.1"
-
 
 
 def deps = [:]
@@ -93,17 +95,18 @@ deps.persistent_cookie = "com.github.franmontiel:PersistentCookieJar:$versions.p
 deps.gson = "com.google.code.gson:gson:$versions.gson"
 deps.permission = "com.yanzhenjie:permission:$versions.permission"
 deps.utils = "com.blankj:utilcode:$versions.utils"
-deps.top_snackbar ="com.androidadvance:topsnackbar:$versions.top_snackbar"
+deps.top_snackbar = "com.androidadvance:topsnackbar:$versions.top_snackbar"
 deps.litepal = "org.litepal.android:core:$versions.litepal"
-deps.toasty =  "com.github.GrenderG:Toasty:$versions.toasty"
+deps.toasty = "com.github.GrenderG:Toasty:$versions.toasty"
 deps.logger = "com.orhanobut:logger:$versions.logger"
 deps.arouter_api = "com.alibaba:arouter-api:$versions.arouter_api"
 deps.arouter_compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"
+deps.databinding = "com.android.databinding:compiler:$versions.databinding"
 
 ext.deps = deps
 
 def build_versions = [:]
-build_versions.min_sdk = 16
+build_versions.min_sdk = 19
 build_versions.target_sdk = 27
 build_versions.build_tools = "27.0.2"
 ext.build_versions = build_versions
@@ -115,7 +118,7 @@ def addRepos(RepositoryHandler handler) {
     handler.mavenCentral()
     //Add the JitPack repository
     handler.maven { url "https://jitpack.io" }
-    handler.maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
 }
 
 ext.addRepos = this.&addRepos

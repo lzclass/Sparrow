@@ -35,7 +35,7 @@ public class BaseApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
-        Logger.init("pattern").logLevel(LogLevel.FULL);
+        Logger.init("myapp").logLevel(LogLevel.FULL);
         Utils.init(this);
         mAppDelegateList = ClassUtils.getObjectsWithInterface(this, IApplicationDelegate.class, ROOT_PACKAGE);
         for (IApplicationDelegate delegate : mAppDelegateList) {

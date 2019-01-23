@@ -8,10 +8,8 @@ import android.support.v4.app.Fragment;
 import com.guiying.module.common.utils.Utils;
 
 /**
- * <p>Fragment的基类</p>
- *
- * @author 张华洋
- * @name BaseFragment
+ * @description Fragment的基类
+ * @author liuzhao by 2019/1/23  15:11
  */
 @Keep
 public abstract class BaseFragment extends Fragment {

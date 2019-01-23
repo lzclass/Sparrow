@@ -286,7 +286,7 @@
 -keep class com.nostra13.universalimageloader.** { *; }
 
 
-#-ButterKnife 7.0
+#-ButterKnife 10.0
  -keep class butterknife.** { *; }
  -dontwarn butterknife.internal.**
  -keep class **$$ViewBinder { *; }
