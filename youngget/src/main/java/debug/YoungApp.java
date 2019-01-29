@@ -1,7 +1,7 @@
 package debug;
 
 
-import com.guiying.module.common.base.BaseApplication;
+import com.pai.knowledge.common.base.BaseApplication;
 
 public class YoungApp extends BaseApplication {
     @Override

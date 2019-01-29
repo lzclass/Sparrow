@@ -24,7 +24,7 @@ android {
 
     compileSdkVersion build_versions.target_sdk
     defaultConfig {
-        applicationId "com.guiying.module"
+        applicationId "com.pai.knowledge"
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
         versionCode 1
@@ -78,7 +78,6 @@ dependencies {
     implementation project(':lib_common')
     if (!isModule.toBoolean()) {
         implementation project(':module_main')
-        implementation project(':module_girls')
-        implementation project(':module_news')
+        implementation project(':youngget')
     }
 }

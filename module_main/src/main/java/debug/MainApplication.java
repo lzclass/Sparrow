@@ -1,9 +1,9 @@
 package debug;
 
-import com.guiying.module.common.base.BaseApplication;
-import com.guiying.module.common.http.HttpClient;
-import com.guiying.module.common.http.OnResultListener;
 import com.orhanobut.logger.Logger;
+import com.pai.knowledge.common.base.BaseApplication;
+import com.pai.knowledge.common.http.HttpClient;
+import com.pai.knowledge.common.http.OnResultListener;
 
 /**
  * <p>类说明</p>

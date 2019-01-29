@@ -4,10 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context="com.guiying.module.main.BottomNavigationActivity">
+    android:orientation="vertical">
 
-    <com.guiying.module.common.widget.NoScrollViewPager
+    <com.pai.knowledge.common.widget.NoScrollViewPager
         android:id="@+id/container_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

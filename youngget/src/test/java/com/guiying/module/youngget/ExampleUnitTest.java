@@ -1,4 +1,4 @@
-package com.guiying.module.youngget;
+package com.pai.knowledge.youngget;
 
 import org.junit.Test;
 

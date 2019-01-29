@@ -1,4 +1,4 @@
-package com.guiying.module.youngget;
+package com.pai.knowledge.youngget;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.guiying.module.youngget", appContext.getPackageName());
+        assertEquals("com.pai.knowledge.youngget", appContext.getPackageName());
     }
 }
