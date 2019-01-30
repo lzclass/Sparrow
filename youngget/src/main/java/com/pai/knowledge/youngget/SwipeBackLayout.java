@@ -10,8 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.pai.knowledge.R;
-
 /**
  * @author liuzhao by 2019/1/22  17:29
  * @description 侧滑关闭

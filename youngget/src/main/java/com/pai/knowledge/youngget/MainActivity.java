@@ -1,5 +1,6 @@
 package com.pai.knowledge.youngget;
 
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -8,10 +9,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.pai.knowledge.R;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             int i = item.getItemId();
             if (i == R.id.navigation_home) {
                 switchFragment(0);
-//                    startActivity(new Intent(MainActivity.this, SideSlipCloseActivity.class));
+//                    startActivity(new Intent(MmkvDemoActivity.this, SideSlipCloseActivity.class));
                 return true;
             } else if (i == R.id.navigation_dashboard) {
                 return true;

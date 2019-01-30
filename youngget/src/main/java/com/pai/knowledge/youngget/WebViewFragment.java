@@ -10,7 +10,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.orhanobut.logger.Logger;
-import com.pai.knowledge.R;
 
 /**
  * @author liuzhao by 2019/1/23  14:16

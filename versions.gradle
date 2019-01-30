@@ -31,7 +31,7 @@ versions.toasty = "1.1.3"
 versions.logger = "1.15"
 versions.material_dialog = "0.9.6.0"
 versions.databinding = "3.1.4"
-
+versions.mmkv = "1.0.17"
 
 //Arouter
 versions.arouter_compiler = "1.1.4"
@@ -102,6 +102,7 @@ deps.logger = "com.orhanobut:logger:$versions.logger"
 deps.arouter_api = "com.alibaba:arouter-api:$versions.arouter_api"
 deps.arouter_compiler = "com.alibaba:arouter-compiler:$versions.arouter_compiler"
 deps.databinding = "com.android.databinding:compiler:$versions.databinding"
+deps.mmkv="com.tencent:mmkv:$versions.mmkv"
 
 ext.deps = deps
 

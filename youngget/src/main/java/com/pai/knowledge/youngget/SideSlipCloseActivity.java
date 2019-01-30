@@ -4,7 +4,6 @@ package com.pai.knowledge.youngget;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.pai.knowledge.R;
 import com.pai.knowledge.common.base.BaseActivity;
 
 /**

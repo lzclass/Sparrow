@@ -11,12 +11,14 @@
         <activity
             android:name=".youngget.ScrollingActivity"
             android:label="@string/app_name"
-            android:theme="@style/transparency_theme_light">
-        </activity>
+            android:theme="@style/transparency_theme_light"></activity>
         <activity
             android:name=".youngget.SideSlipCloseActivity"
             android:label="@string/app_name"
-            android:theme="@style/transparency_theme_light">
+            android:theme="@style/transparency_theme_light"></activity>
+        <activity android:name=".youngget.MainActivity"></activity>
+        <activity android:name=".youngget.mmkvdemo.MmkvDemoActivity">
+
         </activity>
     </application>
 
