@@ -1,5 +1,6 @@
 package com.pai.knowledge.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
@@ -20,14 +21,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ViewManager.getInstance().addActivity(this);
-        OkHttpClient okHttpClient = new OkHttpClient().newBuilder().build();
         MyView view_one = (MyView) findViewById(R.id.view_one);
         ViewTwo view_two = (ViewTwo) findViewById(R.id.view_two);
         view_one.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ToastUtils.showLongToast("OnClickListener view_one");
-
+                startActivity(new Intent(MainActivity.this, MultiThreadActivity.class));
             }
         });
         view_one.setOnLongClickListener(new View.OnLongClickListener() {

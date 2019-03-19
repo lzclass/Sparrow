@@ -9,16 +9,16 @@
 
         <com.pai.knowledge.main.view.MyView
             android:id="@+id/view_one"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="按钮一"
+            android:text="多线程学习"
             android:textSize="@dimen/text_size_18sp"
             android:textColor="@color/black" />
 
         <com.pai.knowledge.main.view.ViewTwo
             android:id="@+id/view_two"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="10dp"
             android:text="按钮二"
             android:layout_marginTop="@dimen/size_50dp"
             android:textSize="@dimen/text_size_18sp"
