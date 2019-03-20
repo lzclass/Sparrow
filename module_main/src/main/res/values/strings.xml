@@ -2,9 +2,10 @@
     <string name="app_exit_hint">再按一次退出程序</string>
     <string name="title_module_main">组件_主页</string>
     <string name="title_home">首页</string>
-    <string name="title_data">资料</string>
+    <string name="title_data">技术</string>
     <string name="title_notifications">消息</string>
     <string name="title_my">我的</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_dashboard">Dashboard</string>
 
 </resources>

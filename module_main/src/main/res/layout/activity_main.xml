@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    tools:context=".view.ui.MainActivity">
 
-        <com.pai.knowledge.main.view.MyView
-            android:id="@+id/view_one"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="多线程学习"
-            android:textSize="@dimen/text_size_18sp"
-            android:textColor="@color/black" />
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
-        <com.pai.knowledge.main.view.ViewTwo
-            android:id="@+id/view_two"
-            android:layout_width="wrap_content"
-            android:layout_height="10dp"
-            android:text="按钮二"
-            android:layout_marginTop="@dimen/size_50dp"
-            android:textSize="@dimen/text_size_18sp"
-            android:textColor="@color/black" />
-</LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+</android.support.constraint.ConstraintLayout>

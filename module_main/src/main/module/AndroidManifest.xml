@@ -10,14 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.ui.ViewActivity"
             android:label="@string/title_module_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MultiThreadActivity"/>
+        <activity android:name=".view.ui.MultiThreadActivity" />
+        <activity android:name=".view.ui.AnimationActivity" />
+        <activity
+            android:name=".view.ui.MainActivity"
+            android:label="@string/title_activity_main"></activity>
     </application>
 
 </manifest>

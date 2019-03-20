@@ -1,4 +1,4 @@
-package com.pai.knowledge.main.view;
+package com.pai.knowledge.main.view.widget;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -25,16 +25,16 @@ public class ViewTwo extends android.support.v7.widget.AppCompatTextView {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        Logger.d(TAG + "dispatchTouchEvent...", event.getAction() + "");
+        Logger.d(TAG + "...dispatchTouchEvent...", event.getAction() + "");
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Logger.d(TAG + "MotionEvent.ACTION_DOWN...");
+                Logger.d(TAG + "...MotionEvent.ACTION_DOWN...");
                 break;
             case MotionEvent.ACTION_UP:
-                Logger.d(TAG + "MotionEvent.ACTION_UP...");
+                Logger.d(TAG + "...MotionEvent.ACTION_UP...");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Logger.d(TAG + "MotionEvent.ACTION_MOVE...");
+                Logger.d(TAG + "...MotionEvent.ACTION_MOVE...");
                 break;
         }
         return super.dispatchTouchEvent(event);
@@ -42,16 +42,16 @@ public class ViewTwo extends android.support.v7.widget.AppCompatTextView {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Logger.d(TAG + "onTouchEvent...", event.getAction() + "");
+        Logger.d(TAG + "...onTouchEvent...", event.getAction() + "");
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Logger.d(TAG + "MotionEvent.ACTION_DOWN...");
+                Logger.d(TAG + "...MotionEvent.ACTION_DOWN...");
                 break;
             case MotionEvent.ACTION_UP:
-                Logger.d(TAG + "MotionEvent.ACTION_UP...");
+                Logger.d(TAG + "...MotionEvent.ACTION_UP...");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Logger.d(TAG + "MotionEvent.ACTION_MOVE...");
+                Logger.d(TAG + "...MotionEvent.ACTION_MOVE...");
                 break;
         }
         return super.onTouchEvent(event);

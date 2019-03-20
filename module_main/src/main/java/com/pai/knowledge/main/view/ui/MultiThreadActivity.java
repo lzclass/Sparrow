@@ -1,6 +1,5 @@
-package com.pai.knowledge.main;
+package com.pai.knowledge.main.view.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +9,7 @@ import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
 import com.pai.knowledge.common.base.BaseActivity;
+import com.pai.knowledge.main.R;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.ExecutorService;
@@ -75,7 +75,7 @@ public class MultiThreadActivity extends BaseActivity {
             executorService.execute(new Runnable() {
                 @Override
                 public void run() {
-                    stringBuffer.append(Thread.currentThread().getName() + "\n");
+                    stringBuffer.append(Thread.currentThread().getName() + "第几个线程" + "\n");
                     Logger.d(TAG, Thread.currentThread().getName() + "");
                     Message message = handler.obtainMessage();
                     message.obj = stringBuffer;
